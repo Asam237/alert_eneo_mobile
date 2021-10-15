@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {ROUTES} from '../constants/routes';
 import {StatusBar} from 'react-native';
+import {COLOR} from '../assets/themes/globals';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ export function navigate(name: string) {
 export const AppNavigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
+      <StatusBar backgroundColor={COLOR.primaryColor} />
       <Stack.Navigator>
         <Stack.Screen
           name={ROUTES.welcome.name}

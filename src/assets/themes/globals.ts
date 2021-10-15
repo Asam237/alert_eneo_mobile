@@ -1,5 +1,5 @@
 export const COLOR = {
-  primaryColor: '#F866FE',
+  primaryColor: '#98C012',
   secondaryColor: '#fff',
   normalTextColor: '#B6B5BD',
   tilteTextColor: '#3B4148',
@@ -11,4 +11,6 @@ export const SPACING = {
   medium: 20,
   xlarge: 25,
   large: 30,
+  full: '100%',
+  buttonHeight: 45,
 };

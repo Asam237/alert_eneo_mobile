@@ -1,24 +1,34 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {Image, SafeAreaView, StyleSheet, View} from 'react-native';
 import {SPACING} from '../../assets/themes/globals';
+import {MyButton} from '../../components/myButton/MyButton.component';
 import {MyText} from '../../components/myText/MyText.component';
 import {LANGUAGE} from '../../constants/languages';
 import {AppLayout} from '../layout/App.layout';
+import AlertPicture from '../../assets/imgs/alerte.png';
 
 export const Welcome = (navigation: any) => {
   return (
     <SafeAreaView style={styles.container}>
       <AppLayout>
-        <View style={styles.container__center}>
-          <MyText myText={LANGUAGE.welcome.started} variant="title" />
+        <View style={{flex: 3, justifyContent: 'center'}}>
+          <View style={styles.container__center}>
+            <Image source={AlertPicture} style={{width: 150, height: 150}} />
+            <MyText myText={LANGUAGE.welcome.started} variant="title" />
+          </View>
+          <View style={[styles.container__center, {marginTop: SPACING.medium}]}>
+            <MyText
+              myText={LANGUAGE.welcome.content}
+              variant="normal"
+              lineHeight={SPACING.xlarge}
+              textAlign="center"
+            />
+          </View>
         </View>
-        <View style={[styles.container__center, {marginTop: SPACING.medium}]}>
-          <MyText
-            myText={LANGUAGE.welcome.content}
-            variant="normal"
-            lineHeight={SPACING.xlarge}
-            textAlign="center"
-          />
+        <View style={{flex: 2, justifyContent: 'center'}}>
+          <View style={{height: SPACING.buttonHeight}}>
+            <MyButton myText={LANGUAGE.welcome.start} onPress={null} />
+          </View>
         </View>
       </AppLayout>
     </SafeAreaView>

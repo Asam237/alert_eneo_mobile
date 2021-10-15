@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {SPACING} from '../../assets/themes/globals';
 
 export const AppLayout = (props: any) => {
   console.log('Props: ', props);
@@ -8,6 +9,7 @@ export const AppLayout = (props: any) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: SPACING.medium,
+    flex: 1,
   },
 });

@@ -1,14 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import {COLOR, SPACING} from '../../assets/themes/globals';
 import {MyText} from '../myText/MyText.component';
-export const MyButton = (props: any, navigation: any) => {
-  const toClick = () => {
-    navigation.navigate(props.navigate);
-  };
-
+export const MyButton = (props: any) => {
   return (
-    <TouchableOpacity onPress={toClick} style={styles.container}>
+    <TouchableOpacity
+      onPress={() => props.navigationName()}
+      style={styles.container}>
       <MyText
         myText={props.myText}
         color={COLOR.secondaryColor}

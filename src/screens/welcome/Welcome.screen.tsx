@@ -14,9 +14,12 @@ export const Welcome = (navigation: any) => {
         <View style={{flex: 3, justifyContent: 'center'}}>
           <View style={styles.container__center}>
             <Image source={AlertPicture} style={{width: 150, height: 150}} />
-            <MyText myText={LANGUAGE.welcome.started} variant="title" />
+            <View
+              style={[styles.container__center, {marginTop: SPACING.medium}]}>
+              <MyText myText={LANGUAGE.welcome.started} variant="title" />
+            </View>
           </View>
-          <View style={[styles.container__center, {marginTop: SPACING.medium}]}>
+          <View style={[styles.container__center, {marginTop: SPACING.small}]}>
             <MyText
               myText={LANGUAGE.welcome.content}
               variant="normal"
@@ -27,7 +30,10 @@ export const Welcome = (navigation: any) => {
         </View>
         <View style={{flex: 2, justifyContent: 'center'}}>
           <View style={{height: SPACING.buttonHeight}}>
-            <MyButton myText={LANGUAGE.welcome.start} onPress={null} />
+            <MyButton
+              myText={LANGUAGE.welcome.start}
+              navigationName={() => navigation.navigation.navigate('home')}
+            />
           </View>
         </View>
       </AppLayout>

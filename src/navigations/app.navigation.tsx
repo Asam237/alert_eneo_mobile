@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {ROUTES} from '../constants/routes';
-import {StatusBar, TouchableOpacity, View} from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {COLOR, SPACING} from '../assets/themes/globals';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {faAlignJustify} from '@fortawesome/free-solid-svg-icons';
+import {Menu, MenuItem} from 'react-native-material-menu';
+import {LANGUAGE} from '../constants/languages';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +24,15 @@ export function navigate(name: string) {
 }
 
 export const AppNavigation = () => {
+  const [visible, setVisible] = useState(false);
+
+  const hideMenu = () => {
+    // console.log('Navigation::::::::::::', navigate('about'));
+    navigate('about');
+    setVisible(false);
+  };
+  const showMenu = () => setVisible(true);
+
   return (
     <NavigationContainer ref={navigationRef}>
       <StatusBar backgroundColor={COLOR.primaryColor} />
@@ -43,24 +60,40 @@ export const AppNavigation = () => {
             },
             headerRight: () => {
               return (
-                <View
-                  style={{flexDirection: 'row', marginRight: SPACING.small}}>
-                  <TouchableOpacity style={{marginRight: SPACING.small}}>
-                    <FontAwesomeIcon
-                      icon={faSearch}
-                      color={COLOR.secondaryColor}
-                      size={SPACING.xmedium}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity>
-                    <FontAwesomeIcon
-                      icon={faAlignJustify}
-                      color={COLOR.secondaryColor}
-                      size={SPACING.xmedium}
-                    />
-                  </TouchableOpacity>
+                <View style={styles.container__main}>
+                  <Menu
+                    visible={visible}
+                    anchor={
+                      <TouchableOpacity onPress={showMenu}>
+                        <FontAwesomeIcon
+                          icon={faAlignJustify}
+                          color={COLOR.secondaryColor}
+                          size={SPACING.medium}
+                        />
+                      </TouchableOpacity>
+                    }
+                    onRequestClose={hideMenu}>
+                    <MenuItem onPress={hideMenu}>A propos</MenuItem>
+                    {/* <MenuItem disabled>Disabled item</MenuItem> */}
+                  </Menu>
                 </View>
               );
+            },
+          }}
+        />
+        <Stack.Screen
+          name={ROUTES.about.name}
+          component={ROUTES.about.component}
+          options={{
+            headerTitle: 'A propos',
+            headerTintColor: COLOR.secondaryColor,
+            headerStyle: {
+              backgroundColor: COLOR.primaryColor,
+            },
+            headerTitleAlign: 'left',
+            headerTitleStyle: {
+              color: COLOR.secondaryColor,
+              fontSize: SPACING.medium,
             },
           }}
         />
@@ -68,3 +101,12 @@ export const AppNavigation = () => {
     </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  container__main: {
+    height: SPACING.full,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: SPACING.small,
+  },
+});

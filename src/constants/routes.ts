@@ -1,3 +1,4 @@
+import {About} from '../screens/about/About.screen';
 import {Home} from '../screens/home/Home.screen';
 import {Welcome} from '../screens/welcome/Welcome.screen';
 
@@ -9,6 +10,7 @@ interface IRouteItem {
 interface IRoutes {
   welcome: IRouteItem;
   home: IRouteItem;
+  about: IRouteItem;
 }
 
 export const ROUTES: IRoutes = {
@@ -19,5 +21,9 @@ export const ROUTES: IRoutes = {
   home: {
     name: 'home',
     component: Home,
+  },
+  about: {
+    name: 'about',
+    component: About,
   },
 };

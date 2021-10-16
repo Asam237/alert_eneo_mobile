@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {COLOR, SPACING} from '../../assets/themes/globals';
 import {MyText} from '../myText/MyText.component';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faMapPin} from '@fortawesome/free-solid-svg-icons';
+import {RegionService} from '../../services/regions.service';
 
 export const MyItem = (props: any) => {
+  const [region, setRegion] = useState(0);
+
+  useEffect(() => {
+    const center = async (i: number) => {
+      for (i; i <= 4; i++) {
+        console.log(i);
+        const result = await RegionService.regions(`${i}`);
+        console.log('REGIONS NORD', [result.data.length]);
+        await result;
+      }
+    };
+
+    center(0);
+  });
   console.log('DATAAA', props.data.name);
   return (
     <View

@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import {MyItem} from '../../components/items/Item.component';
 import {ITEMS} from '../../services/items.service';
-import {RegionService} from '../../services/regions.service';
 import {AppLayout} from '../layout/App.layout';
 
 export const Home = (navigation?: any) => {

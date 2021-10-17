@@ -106,6 +106,19 @@ export const AppNavigation = () => {
             headerStyle: {
               backgroundColor: COLOR.primaryColor,
             },
+            headerRight: () => {
+              return (
+                <View style={styles.container__main}>
+                  <TouchableOpacity onPress={showMenu}>
+                    <FontAwesomeIcon
+                      icon={faSearch}
+                      color={COLOR.secondaryColor}
+                      size={SPACING.medium}
+                    />
+                  </TouchableOpacity>
+                </View>
+              );
+            },
             headerTitleAlign: 'left',
             headerTitleStyle: {
               color: COLOR.secondaryColor,

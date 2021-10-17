@@ -1,24 +1,46 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {SPACING} from '../../assets/themes/globals';
+import {MyText} from '../myText/MyText.component';
 
 export const Don = (props: any) => {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        marginVertical: SPACING.small,
-        justifyContent: 'flex-start',
-      }}>
-      <Image style={{width: 45, height: 45}} source={props.data.picture} />
-      <View style={{marginLeft: SPACING.small}}>
-        <Text style={{fontWeight: 'bold', color: '#000'}}>
-          {props.data.name}
-        </Text>
-        <Text style={{marginTop: 2, fontWeight: 'bold', color: 'red'}}>
-          {props.data.tel}
-        </Text>
+    <View style={styles.container__card}>
+      <View style={{flexDirection: 'row'}}>
+        <Image style={{width: 45, height: 45}} source={props.data.picture} />
+        <View style={styles.container__center}>
+          <MyText
+            fontWeight="bold"
+            fontSize={16}
+            myText={props.data.name}
+            variant="title"
+          />
+          <MyText
+            myText={props.data.tel}
+            color="red"
+            fontWeight="bold"
+            variant="title"
+          />
+        </View>
       </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container__card: {
+    backgroundColor: '#fff',
+    elevation: 5,
+    padding: SPACING.small,
+    marginTop: SPACING.xmedium,
+  },
+  container__don: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  container__center: {
+    marginLeft: SPACING.small,
+    justifyContent: 'center',
+  },
+});

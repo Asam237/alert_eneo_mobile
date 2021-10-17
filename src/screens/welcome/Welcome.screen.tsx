@@ -16,7 +16,12 @@ export const Welcome = (navigation: any) => {
             <Image source={AlertPicture} style={{width: 150, height: 150}} />
             <View
               style={[styles.container__center, {marginTop: SPACING.medium}]}>
-              <MyText myText={LANGUAGE.welcome.started} variant="title" />
+              <MyText
+                myText={LANGUAGE.welcome.started}
+                variant="title"
+                fontWeight="bold"
+                fontSize={SPACING.large}
+              />
             </View>
           </View>
           <View style={[styles.container__center, {marginTop: SPACING.small}]}>
@@ -25,6 +30,7 @@ export const Welcome = (navigation: any) => {
               variant="normal"
               lineHeight={SPACING.xlarge}
               textAlign="center"
+              fontSize={14}
             />
           </View>
         </View>

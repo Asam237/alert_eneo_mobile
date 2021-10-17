@@ -1,8 +1,16 @@
 export const LANGUAGE = {
   welcome: {
-    started: 'The energy of Cameroon',
+    started: 'Bienvenue',
+    // started: 'The energy of Cameroon',
     content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    start: 'Get started',
+      "Application mobile pour alerter les usager lorsqu'il aura coupure dans une zone du pays.",
+    start: 'Démarrer',
+  },
+  others: {
+    empty: 'Aucun programme de coupure prévu pour cette zone.',
+    name: '@asam',
+    app: 'alert_eneo_app',
+    version: 'version',
+    v: '1.0.0',
   },
 };

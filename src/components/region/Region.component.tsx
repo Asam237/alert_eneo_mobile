@@ -1,7 +1,6 @@
 import {faMapPin} from '@fortawesome/free-solid-svg-icons';
 import {faCity} from '@fortawesome/free-solid-svg-icons';
 import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
-import {faExclamationCircle} from '@fortawesome/free-solid-svg-icons';
 import {faHourglassStart} from '@fortawesome/free-solid-svg-icons';
 import {faHourglassEnd} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
@@ -16,15 +15,7 @@ const FONT_CONTENT = 14;
 export const Region = (data: any) => {
   console.log('DATA REGION:::::', data.data);
   return (
-    <View
-      style={{
-        elevation: 2,
-        backgroundColor: COLOR.secondaryColor,
-        padding: SPACING.xmedium,
-        borderRadius: SPACING.small,
-        flexDirection: 'column',
-        marginVertical: SPACING.xsmall,
-      }}>
+    <View style={styles.container}>
       <View style={[styles.container__line, {flexDirection: 'row'}]}>
         <FontAwesomeIcon
           icon={faCity}
@@ -118,6 +109,14 @@ export const Region = (data: any) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    elevation: 2,
+    backgroundColor: COLOR.secondaryColor,
+    padding: SPACING.xmedium,
+    borderRadius: SPACING.small,
+    flexDirection: 'column',
+    marginVertical: SPACING.xsmall,
+  },
   container__delimited: {
     flexDirection: 'row',
     marginTop: SPACING.small,

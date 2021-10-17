@@ -1,4 +1,5 @@
 import {About} from '../screens/about/About.screen';
+import {Detail} from '../screens/detail/Detail.screen';
 import {Home} from '../screens/home/Home.screen';
 import {Welcome} from '../screens/welcome/Welcome.screen';
 
@@ -11,6 +12,7 @@ interface IRoutes {
   welcome: IRouteItem;
   home: IRouteItem;
   about: IRouteItem;
+  detail: IRouteItem;
 }
 
 export const ROUTES: IRoutes = {
@@ -25,5 +27,9 @@ export const ROUTES: IRoutes = {
   about: {
     name: 'about',
     component: About,
+  },
+  detail: {
+    name: 'detail',
+    component: Detail,
   },
 };

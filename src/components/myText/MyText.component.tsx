@@ -26,6 +26,8 @@ export const MyText = (props: any) => {
           color: props.color,
           lineHeight: props.lineHeight,
           textAlign: props.textAlign,
+          fontWeight: props.fontWeight,
+          fontSize: props.fontSize,
         },
       ]}>
       {props.myText}

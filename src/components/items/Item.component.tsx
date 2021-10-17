@@ -6,22 +6,19 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faMapPin} from '@fortawesome/free-solid-svg-icons';
 import {RegionService} from '../../services/regions.service';
 
-export const MyItem = (props: any) => {
-  const [region, setRegion] = useState(0);
+export const MyItem = (data: any) => {
+  // const [region, setRegion] = useState(0);
 
-  useEffect(() => {
-    const center = async (i: number) => {
-      for (i; i <= 4; i++) {
-        console.log(i);
-        const result = await RegionService.regions(`${i}`);
-        console.log('REGIONS NORD', [result.data.length]);
-        await result;
-      }
-    };
-
-    center(0);
-  });
-  console.log('DATAAA', props.data.name);
+  // useEffect(() => {
+  //   const center = async (i: number) => {
+  //     for (i; i <= 4; i++) {
+  //       console.log(i);
+  //       const result = await RegionService.regions(`${i}`);
+  //       await result;
+  //     }
+  //   };
+  // });
+  // console.log('DATATATATATATA::::', data);
   return (
     <View
       style={{
@@ -29,7 +26,7 @@ export const MyItem = (props: any) => {
         backgroundColor: COLOR.secondaryColor,
         padding: SPACING.xmedium,
         borderRadius: SPACING.small,
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         flexDirection: 'row',
         marginVertical: SPACING.xsmall,
       }}>
@@ -41,22 +38,22 @@ export const MyItem = (props: any) => {
           color={COLOR.tilteTextColor}
         />
         <MyText
-          myText={props.data.name}
+          myText={data.data.name}
           variant="normal"
           lineHeight={SPACING.xlarge}
           textAlign="center"
           color="#000"
         />
       </View>
-      <View>
+      {/* <View>
         <MyText
-          myText="10"
+          myText=""
           variant="title"
           lineHeight={SPACING.xlarge}
           textAlign="center"
           color="#cecece"
         />
-      </View>
+      </View> */}
     </View>
   );
 };

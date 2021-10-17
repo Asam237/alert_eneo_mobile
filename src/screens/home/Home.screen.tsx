@@ -11,21 +11,19 @@ import {ITEMS} from '../../services/items.service';
 import {RegionService} from '../../services/regions.service';
 import {AppLayout} from '../layout/App.layout';
 
-export const Home = () => {
+export const Home = (navigation?: any) => {
   const [myData, setMyData] = useState([]);
-  const toDetail = async (value?: number, props?: any) => {
-    props.navigation.navigate('detailCoffee', await this.state.myData[value]);
+  const toDetail = async (value?: number) => {
+    navigation.navigation.navigate('detail', await myData[value]);
   };
 
-  useEffect(() => {
-    const center = async (i: number) => {
-      const result = await RegionService.regions(`${i}`);
-      console.log('REGIONS NORD', [result.data.length]);
-      await result;
-    };
+  console.log('MYDATAA:::::', myData);
 
-    center(0);
-  });
+  useEffect(() => {
+    // const fetchData = async () => {
+    //   const result = await RegionService.regions('2');
+    setMyData(ITEMS);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -36,7 +34,12 @@ export const Home = () => {
             data={ITEMS}
             numColumns={1}
             renderItem={({item, index}) => (
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  console.log('INDEX ICI', index);
+                  console.log('ITEM ICI', item);
+                  toDetail(index);
+                }}>
                 <MyItem data={item} />
               </TouchableOpacity>
             )}

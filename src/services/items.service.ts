@@ -1,22 +1,22 @@
 export const ITEMS = [
   {
-    id: 0,
+    id: 4,
     name: 'Extreme-Nord',
   },
   {
     id: 1,
+    name: 'Adamaoua',
+  },
+  {
+    id: 11,
     name: 'Nord',
   },
   {
     id: 2,
-    name: 'Adamaoua',
-  },
-  {
-    id: 3,
     name: 'Centre',
   },
   {
-    id: 4,
+    id: 44,
     name: 'Littoral',
   },
   {

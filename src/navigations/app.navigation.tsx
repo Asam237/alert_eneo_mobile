@@ -97,6 +97,22 @@ export const AppNavigation = () => {
             },
           }}
         />
+        <Stack.Screen
+          name={ROUTES.detail.name}
+          component={ROUTES.detail.component}
+          options={{
+            headerTitle: 'ENEO Cameroon',
+            headerTintColor: COLOR.secondaryColor,
+            headerStyle: {
+              backgroundColor: COLOR.primaryColor,
+            },
+            headerTitleAlign: 'left',
+            headerTitleStyle: {
+              color: COLOR.secondaryColor,
+              fontSize: SPACING.medium,
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

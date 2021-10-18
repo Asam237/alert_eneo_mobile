@@ -6,6 +6,7 @@ import {MyText} from '../../components/myText/MyText.component';
 import {LANGUAGE} from '../../constants/languages';
 import {AppLayout} from '../layout/App.layout';
 import AlertPicture from '../../assets/imgs/alerte.png';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export const Welcome = (navigation: any) => {
   return (

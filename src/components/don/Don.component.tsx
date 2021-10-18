@@ -7,7 +7,10 @@ export const Don = (props: any) => {
   return (
     <View style={styles.container__card}>
       <View style={{flexDirection: 'row'}}>
-        <Image style={{width: 45, height: 45}} source={props.data.picture} />
+        <Image
+          style={{width: 45, height: 45, borderRadius: 22.5}}
+          source={props.data.picture}
+        />
         <View style={styles.container__center}>
           <MyText
             fontWeight="bold"

@@ -19,9 +19,6 @@ export const Detail = (props?: any) => {
   const regionId = props.route.params.id;
   const [region, setRegion] = useState([]);
   const [loader, setLoader] = useState(false);
-
-  console.log('MY REGION::::::', region);
-
   useEffect(() => {
     const fetchData = async () => {
       const result = await RegionService.regions(`${regionId}`);

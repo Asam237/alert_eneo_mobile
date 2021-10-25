@@ -31,6 +31,6 @@ This template follows a very simple project structure:
 
 > Clone the repo:  https://github.com/Asam237/alert_eneo_mobile
 
-> This package also depends on `react`. Please make sure you have it installed ("npm install" if you use npm or "yarn" if you use yarn)
-> For run application, open terminal and paste this => "npx react-native start", after that, open new terminal and paste this "yarn android" for run emulator (if you have) or run physical phone.
+> This package also depends on `react`. Please make sure you have it installed (`npm install` if you use npm or `yarn` if you use yarn)
+> For run application, open terminal and paste this => `npx react-native start`, after that, open new terminal and paste this `yarn android` for run emulator (if you have) or run physical phone.
 
